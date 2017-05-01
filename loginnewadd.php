@@ -77,8 +77,6 @@ session_start();
 			{
 				echo 'ERROR: Username or Password is not provided';
 			}
-			$conn = new MongoClient('localhost');
-			$db = $conn->selectDB('test');
 			$collection = new MongoCollection($db, 'admin');
 			$condition = array('user' => 'it2');
 			$cursor = $collection->find(array('username' => $username, 'password' => $password));
